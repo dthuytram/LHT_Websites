@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+          integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"/>
+    <title>LHTransport-2021</title>
+    <link rel="icon" href=
+            "data:image/jpeg;base64,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"
+          type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <link href="../static/css/default-page.css" rel="stylesheet" th:href="@{/css/default-page.css}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+</head>
+<body>
+<div th:insert="~{default-admin.html :: navbarAdmin}"></div>
+<div class="container-fluid" style="margin-bottom: 150px">
+    <div class="h4 text-center mb-4">
+        <p id="de">Bước 1: Cật Nhật Đề Thi</p>
+    </div>
+
+    <div class="success">
+        <div th:if="${message}">
+            <span th:text="${message}" style="color: red"></span>
+        </div>
+    </div>
+
+    <form style="max-width: 1200px; margin: 0 auto; background-color: #d8f5ff;" th:action="@{/exam/update}"
+          th:object="${exam}" method="post">
+        <div id="wrapFormExam">
+            <input th:type="hidden" name="id" th:field="*{id}">
+            <div class="border border-secondary rounded p-3 pt-5">
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Mã đề thi</label>
+                    <div class="col-sm-8">
+                        <p th:text="${exam.idName}"></p>
+                        <input type="hidden" class="form-control" th:field="*{idName}" name="idName" id="idName" onchange="return validate()">
+                        <div th:if="${#fields.hasErrors('idName')}" th:errors="*{idName}" style="color: red"></div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Môn học</label>
+
+                    <div class="col-sm-8 pt-2">
+                        <div class="form-check form-check-inline" th:each="subject : ${subjects}">
+                            <input class="form-check-input" type="radio" name="subject" id="subject" onblur="validate()"
+                                   th:value="${subject.id}" th:field="*{subject}">
+                            <label class="form-check-label" th:value="${subject.id}" th:text="${subject.name}"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Tên đề thi</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" th:field="*{nameExam}" name="nameExam" id="nameExam"
+                               onblur="validate()">
+                        <div th:if="${#fields.hasErrors('nameExam')}" th:errors="*{nameExam}" style="color: red"></div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Khối học</label>
+                    <div class="col-sm-8 pt-2">
+                        <div class="form-check form-check-inline" th:each="class : ${classes}">
+                            <input class="form-check-input" type="radio" name="classes" id="classes" onblur="validate()"
+                                   th:value="${class.id}" th:field="*{classes}">
+                            <label class="form-check-label" th:value="${class.id}" th:text="${class.nameClass}"></label>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" onclick="displayFormQuestion()" class="btn btn-primary">Sửa câu hỏi</button>
+            </div>
+        </div>
+        <div id="wrapFormQuestion" style="background-color: white">
+            <table id="questForm" class="table table-striped table-bordered table-hover table-responsive-md">
+                <thead style="background-color: deepskyblue">
+                <tr style="background-color: #27c9ff;">
+                    <th>STT</th>
+                    <th>Câu hỏi</th>
+                    <th>Đáp án A</th>
+                    <th>Đáp án B</th>
+                    <th>Đáp án C</th>
+                    <th>Đáp án D</th>
+                    <th class="col-2">Đáp án</th>
+                    <th class="text-center">
+                        <i class="far fa-plus-square"></i>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="question: ${questions}">
+                    <td th:text="${question.quesId}"></td>
+                    <td th:text="${question.title}"></td>
+                    <td th:text="${question.optionA}"></td>
+                    <td th:text="${question.optionB}"></td>
+                    <td th:text="${question.optionC}"></td>
+                    <td th:text="${question.optionD}"></td>
+                    <td th:text="${question.ans}"></td>
+                    <td class="text-center">
+                        <input type="checkbox" name="A"
+                               th:value="${question.quesId}" th:field="*{questions}">
+                        <div th:if="${#fields.hasErrors('questions')}" th:errors="*{questions}"
+                             style="color: red"></div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="text-center">
+                <button type="submit" class="btn m-2" style="background-color: #3bceff">Cập nhập</button>
+                <a href="/exam/list" class="btn btn-primary m-2" style="background-color: #3bceff">Hủy</a>
+            </div>
+
+            <!--                <div class="d-flex justify-content-center">-->
+            <!--                    <nav aria-label="Page navigation example">-->
+            <!--                        <ul class="pagination">-->
+            <!--                            <li class="page-item">-->
+            <!--                                <a class="page-link btnPrevious" th:href="@{'/exam/editExam/__${id}__'(page=${questions.number - 1})}"-->
+            <!--                                   th:if="${questions.hasPrevious()}" aria-label="Previous">-->
+            <!--                                    <span aria-hidden="true">Trước</span>-->
+            <!--                                </a>-->
+            <!--                            </li>-->
+            <!--                            <li class="page-item">-->
+            <!--                                <a class="page-link" th:text="${questions.number -1}" th:if="${questions.hasPrevious()}"-->
+            <!--                                   th:href="@{'/exam/editExam/__${id}__'(page=${questions.number - 1})}">-->
+
+            <!--                                </a>-->
+            <!--                            </li>-->
+            <!--                            <li class="page-item active">-->
+            <!--                                <a class="page-link" th:text="${questions.number}" th:href="@{'/exam/editExam/__${id}__'(page=${questions.number})}">-->
+
+            <!--                                </a>-->
+            <!--                            </li>-->
+            <!--                            <li class="page-item">-->
+            <!--                                <a class="page-link" th:text="${questions.number +1}" th:if="${questions.hasNext()}"-->
+            <!--                                   th:href="@{'/exam/editExam/__${id}__'(page=${questions.number + 1})}">-->
+            <!--                                </a>-->
+            <!--                            </li>-->
+            <!--                            <li class="page-item">-->
+            <!--                                <a class="page-link btnNext" th:href="@{'/exam/editExam/__${id}__'(page=${questions.number + 1})}"-->
+            <!--                                   th:if="${questions.hasNext()}" aria-label="Next">-->
+            <!--                                    <span aria-hidden="true">Sau</span>-->
+            <!--                                </a>-->
+            <!--                            </li>-->
+            <!--                        </ul>-->
+            <!--                    </nav>-->
+            <!--                </div>-->
+
+        </div>
+    </form>
+</div>
+<div th:insert="~{default-admin.html :: footer}"></div>
+
+<script src="/js/jquery-3.6.0.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script>
+
+    function displayFormExam() {
+        document.getElementById("wrapFormExam").style.display = "block";
+        document.getElementById("wrapFormQuestion").style.display = "none";
+    }
+
+    function displayFormQuestion() {
+        document.getElementById("de").innerText = "Bước 2: Chỉnh sửa câu hỏi vào đề";
+        document.getElementById("wrapFormExam").style.display = "none";
+        document.getElementById("wrapFormQuestion").style.display = "block";
+        document.getElementById("step2").classList.add("active");
+    }
+
+    displayFormExam();
+
+    function validate() {
+
+        var valid = true;
+        valid = checkId($("#idName"));
+        valid = valid && checkEmpty($("#subject"));
+        valid = valid && checkEmpty($("#nameExam"));
+        valid = valid && checkEmpty($("#classes"));
+
+        $("#btn-submit").attr("disabled", true);
+        if (valid) {
+            $("#btn-submit").attr("disabled", false);
+        }
+    }
+
+    function checkEmpty(obj) {
+        if ($(obj).val() == "") {
+            return false;
+        }
+
+        return true;
+    }
+
+    function checkId(obj) {
+        var result = true;
+        result = checkEmpty(obj);
+        if (!result) {
+            return false;
+        }
+
+        var email_regex = /^MD-[\d]{4}$/;
+        result = email_regex.test($(obj).val());
+
+        if (!result) {
+            document.getElementById("idNameError").innerHTML = "Mã đề thi phải là định dạng MD-XXXX (XXXX là số)";
+            return false;
+        }
+
+        return true;
+    }
+
+    $("input:checkbox").click(function () {
+        var bol = $("input:checkbox:checked").length >= 10;
+        $("input:checkbox").not(":checked").attr("disabled", bol);
+    });
+
+    $(document).ready(function () {
+        $("#questForm").DataTable({
+            lengthMenu: [ [15, 25, 50, 100, -1], [15, 25, 50, 100, "Hiện tất cả"] ],
+            pageLength: 15,
+            'aoColumnDefs': [{
+                'bSortable': false,
+                'aTargets': [-1] /* 1st one, start by the right */
+            }],
+            language: {
+                processing: "Message khi đang tải dữ liệu",
+                search: "tìm kiếm",
+                lengthMenu: "Điều chỉnh số lượng bản ghi trên 1 trang _MENU_ ",
+                info: "Bản ghi từ _START_ đến _END_ Tổng công _TOTAL_ bản ghi",
+                infoEmpty: "Khi không có dữ liệu, Hiển thị 0 bản ghi trong 0 tổng cộng 0 ",
+                infoFiltered: "(Message bổ sung cho info khi không search đc record nào _MAX_)",
+                loadingRecords: "",
+                zeroRecords: "Khi tìm kiếm không match với record nào",
+                emptyTable: "Không có dữ liệu",
+                paginate: {
+                    first: "Trang đầu",
+                    previous: "Trang trước",
+                    next: "Trang sau",
+                    last: "Trang cuối"
+                },
+            }
+        });
+    })
+</script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+</body>
+</html>

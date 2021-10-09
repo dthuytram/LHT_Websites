@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>LHTransport-2021</title>
+    <link rel = "icon" href =
+            "data:image/jpeg;base64,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
+          "type = "image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="../static/css/default-page.css" rel="stylesheet" th:href="@{/css/default-page.css}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+<th:block th:insert="~{/default-page :: navbar}"></th:block>
+<div class="container mb-5 mt-5" style="width: 700px">
+    <div class="alert alert-primary alert-dismissible fade show" role="alert" th:if="${message}">
+        <strong th:text="${message}"></strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert" th:if="${messages}">
+        <strong th:text="${messages}"></strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="row card" style="border-color: #00BFFF">
+        <div class="alert" role="alert" style="background: #00BFFF">
+            <h4><strong> Đổi mật khẩu</strong></h4>
+        </div>
+        <form class="mx-5 mb-3 mt-2" method="post" th:object="${users}" th:action="@{/editPass}">
+            <input type="hidden" th:field="*{id}">
+            <input type="hidden" th:field="*{img}">
+            <input type="hidden" th:field="*{fullName}">
+            <input type="hidden" th:field="*{address}">
+            <input type="hidden" th:field="*{email}">
+            <input type="hidden" th:field="*{phoneNumber}">
+            <div class="form-group row">
+                <label class="col-lg-4 col-sm-4 col-form-label" for="mk">Mật khẩu cũ<span class="text-danger">*</span></label>
+                <div class="col-lg-8 col-sm-8">
+                    <input type="password" class="form-control" id="mk" name="oldPass">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-lg-4 col-sm-4 col-form-label" for="email">Mật khẩu mới<span class="text-danger">*</span></label>
+                <div class="col-lg-8 col-sm-8">
+                    <input type="password" class="form-control" id="email" th:field="*{passWord}">
+                    <label th:if="${#fields.hasErrors('passWord')}" th:errors="*{passWord}" style="color: red"></label>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-lg-4 col-sm-4 col-form-label" for="address">Nhập lại mật khẩu<span class="text-danger" >*</span></label>
+                <div class="col-lg-8 col-sm-8">
+                    <input type="password" class="form-control" id="address" th:field="*{rePassWord}">
+                    <label th:if="${#fields.hasErrors('rePassWord')}" th:errors="*{rePassWord}" style="color: red"></label>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-lg-4 col-sm-4 col-form-label hiden"></span></label>
+                <div class="col-lg-8 col-sm-8">
+                    <label class="col-lg-10 col-sm-12 col-form-label "><span class="text-danger mr-1">*</span>Các trường
+                        bắt buộc điền</label>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-lg-4 col-sm-4 col-form-label hiden"></span></label>
+                <div class="col-lg-81 col-sm-8">
+                    <button class="btn btn-primary " type="submit">Gửi</button>
+                    <a th:href="@{/editMember/__${users.id}__}" class="btn btn-primary">
+                        Đóng
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<th:block th:insert="~{/default-page :: footer}"></th:block>
+<script>
+    $(document).ready(function () {
+        $('#')
+    })
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+</html>
